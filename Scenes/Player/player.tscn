@@ -124,7 +124,7 @@ wait_time = 0.4
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -386)
+position_smoothing_enabled = true
 
 [connection signal="area_entered" from="WallColider" to="." method="_on_wall_colider_area_entered"]
 [connection signal="timeout" from="knockback" to="." method="_on_timer_timeout"]

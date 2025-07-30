@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 #Variables that are for the physics
-var accel = 2500/0.3
-var deaccel = 0.3
-var topSpeed = 900
+var accel = 2000/0.2
+var deaccel = 0.2
+var topSpeed = 1000
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var state : States = States.FALLING
 var jumpTime = 0.1
@@ -42,15 +42,20 @@ func _physics_process(delta: float) -> void:
 		set_state(States.RUNNING)
 		velocity.y = 0
 		jumpAllow = 0
-		
 	
+	if not Input.is_action_pressed("left") and not Input.is_action_pressed("right") and state not in [States.KNOCKBACK, States.WALLSLIDING, States.FALLING] and is_on_floor():
+		set_state(States.IDLE)
+		animation.animation = "idle"
+		
+	print(velocity.x)
 	if Input.is_action_just_pressed("jump") and jumpAllow < jumpTime:
-		if state in [States.RUNNING,States.FALLING,States.WALLSLIDING]:
+		if state in [States.IDLE,States.RUNNING,States.FALLING,States.WALLSLIDING]:
 			set_state(States.JUMPING)
 			velocity.y -= jumpForce
 	if state not in [States.KNOCKBACK, States.WALLSLIDING]:
 		if is_on_floor():
-			set_state(States.RUNNING)
+			if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+				set_state(States.RUNNING)
 			if Input.is_action_pressed("left") and velocity.x > -topSpeed:
 				velocity.x -= accel * delta
 				curRunDir = -1
@@ -63,14 +68,12 @@ func _physics_process(delta: float) -> void:
 					set_state(States.IDLE)
 	if state in [States.JUMPING, States.FALLING]:
 		if Input.is_action_pressed("left") and velocity.x > -topSpeed:
-			velocity.x -= (accel * delta) * 0.6
+			velocity.x -= (accel * delta) * 0.2
 			curRunDir = -1
 		if Input.is_action_pressed("right") and velocity.x < topSpeed:
-			velocity.x += (accel * delta) * 0.6
+			velocity.x += (accel * delta) * 0.2
 			curRunDir = 1
-	
-
-	
+	velocity.x = clampf(velocity.x,-topSpeed,topSpeed)
 	move_and_slide()
 	
 func set_state(new_state):
