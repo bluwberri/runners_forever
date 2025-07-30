@@ -1,0 +1,20 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1753857395
+icon.svg::CompressedTexture2D::714513242079053185::1753857256::1753857397::1::::<><><>0<>0<>9dccc329a545d163d4eb7397fd136193<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://Global Scripts/::1753857256
+player_states.gd::GDScript::195878321207710905::1753857256::0::1::::<>RefCounted<><>0<>0<><>::
+::res://Scenes/::1753857256
+::res://Scenes/Block/::1753857382
+block.tscn::PackedScene::87512113173917740::1753857382::0::1::::<><><>0<>0<><>::uid://kgd6tt3nngwf::::res://icon.svg
+::res://Scenes/Main Game/::1753857299
+main_game.gd::GDScript::2484615886337027325::1753857256::0::1::::<>Node2D<><>0<>0<><>::
+main_game.tscn::PackedScene::8787957566575965995::1753857299::0::1::::<><><>0<>0<><>::uid://bbnti4kiaqdwf::::res://Scenes/Main Game/main_game.gd<>uid://x5a5nkorq7op::::res://Scenes/Player/player.tscn<>uid://binkul1m5fv5::::res://Scenes/Block/block.tscn
+::res://Scenes/Player/::1753857312
+falling-ph.png::CompressedTexture2D::6667330222215243715::1753857256::1753857397::1::::<><><>0<>0<>cbd590d0380ac700becc3240b722ebb9<>res://.godot/imported/falling-ph.png-864cfa8b5662d7773457a53ee03c666d.ctex::
+jumping-ph.png::CompressedTexture2D::2016631703136507988::1753857256::1753857397::1::::<><><>0<>0<>159d1e958fb83b1a5310729a1a6838e5<>res://.godot/imported/jumping-ph.png-daac4e37dbb95b87936681560af09c35.ctex::
+knockback-ph.png::CompressedTexture2D::6537521925839760096::1753857256::1753857397::1::::<><><>0<>0<>864641e3b9c3f333e68837909233306b<>res://.godot/imported/knockback-ph.png-0e5d7de997ec3cffafd66d98c6466fb2.ctex::
+player.gd::GDScript::3582686998325850500::1753857256::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::1676329009024761019::1753857299::0::1::::<><><>0<>0<><>::uid://brbqljeltjqsi::::res://Scenes/Player/player.gd<>uid://jolech4gyvf4::::res://Scenes/Player/standing-ph.png<>uid://3y4vnysln1em::::res://Scenes/Player/jumping-ph.png<>uid://c18x7ptufsg5p::::res://Scenes/Player/falling-ph.png<>uid://c0e3bb2oto7ng::::res://Scenes/Player/knockback-ph.png<>uid://b31w70qxor5no::::res://Scenes/Player/running-ph.png<>uid://cbsgnm7eurupw::::res://Scenes/Player/wallsliding-ph.png
+running-ph.png::CompressedTexture2D::4406776385274431880::1753857256::1753857397::1::::<><><>0<>0<>2499a99b61838cbf012ef59713a4edeb<>res://.godot/imported/running-ph.png-c3e2c98bcdbe0438a4b1da8b181085ea.ctex::
+standing-ph.png::CompressedTexture2D::661276028582123291::1753857256::1753857397::1::::<><><>0<>0<>3c8f4ae1ee4b48a856536b2a7c2edc64<>res://.godot/imported/standing-ph.png-93b783c441a7ac0f603c90f96326f3dd.ctex::
+wallsliding-ph.png::CompressedTexture2D::4880577207797776172::1753857256::1753857397::1::::<><><>0<>0<>f340e907a963f8590b5a3b56cc125c1d<>res://.godot/imported/wallsliding-ph.png-0fbbb3077f135ca240dba0e310a69679.ctex::
