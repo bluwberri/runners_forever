@@ -68,10 +68,10 @@ func _physics_process(delta: float) -> void:
 					set_state(States.IDLE)
 	if state in [States.JUMPING, States.FALLING]:
 		if Input.is_action_pressed("left") and velocity.x > -topSpeed:
-			velocity.x -= (accel * delta) * 0.2
+			velocity.x -= (accel * delta) * 0.15
 			curRunDir = -1
 		if Input.is_action_pressed("right") and velocity.x < topSpeed:
-			velocity.x += (accel * delta) * 0.2
+			velocity.x += (accel * delta) * 0.15
 			curRunDir = 1
 	velocity.x = clampf(velocity.x,-topSpeed,topSpeed)
 	move_and_slide()
