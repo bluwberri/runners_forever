@@ -1,0 +1,130 @@
+[gd_scene load_steps=17 format=3 uid="uid://x5a5nkorq7op"]
+
+[ext_resource type="Script" uid="uid://brbqljeltjqsi" path="res://Scenes/Player/player.gd" id="1_a3d8c"]
+[ext_resource type="Texture2D" uid="uid://jolech4gyvf4" path="res://Scenes/Player/standing-ph.png" id="2_a3d8c"]
+[ext_resource type="Texture2D" uid="uid://3y4vnysln1em" path="res://Scenes/Player/jumping-ph.png" id="2_dd0ac"]
+[ext_resource type="Texture2D" uid="uid://c18x7ptufsg5p" path="res://Scenes/Player/falling-ph.png" id="3_0u5uq"]
+[ext_resource type="Texture2D" uid="uid://c0e3bb2oto7ng" path="res://Scenes/Player/knockback-ph.png" id="5_0u5uq"]
+[ext_resource type="Texture2D" uid="uid://b31w70qxor5no" path="res://Scenes/Player/running-ph.png" id="5_jlvik"]
+[ext_resource type="Texture2D" uid="uid://cbsgnm7eurupw" path="res://Scenes/Player/wallsliding-ph.png" id="6_gk6dx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhyir"]
+atlas = ExtResource("3_0u5uq")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpcdj"]
+atlas = ExtResource("2_a3d8c")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtuoh"]
+atlas = ExtResource("2_a3d8c")
+region = Rect2(0, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74mp2"]
+atlas = ExtResource("5_jlvik")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oikmp"]
+atlas = ExtResource("5_jlvik")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06tpx"]
+atlas = ExtResource("5_jlvik")
+region = Rect2(0, 100, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_htcer"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhyir")
+}],
+"loop": true,
+"name": &"falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpcdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtuoh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("2_dd0ac")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0u5uq")
+}],
+"loop": true,
+"name": &"knockback",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74mp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oikmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06tpx")
+}],
+"loop": true,
+"name": &"running",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gk6dx")
+}],
+"loop": true,
+"name": &"wallsliding",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpcdj"]
+size = Vector2(70, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3d8c"]
+size = Vector2(45, 109)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("knockbacktimer", "wallColider", "animation")]
+script = ExtResource("1_a3d8c")
+knockbacktimer = NodePath("knockback")
+wallColider = NodePath("WallColider")
+animation = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 5)
+scale = Vector2(1.15325, 1.43)
+sprite_frames = SubResource("SpriteFrames_htcer")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xpcdj")
+
+[node name="WallColider" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallColider"]
+position = Vector2(22.5, 0)
+shape = SubResource("RectangleShape2D_a3d8c")
+
+[node name="knockback" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -386)
+
+[connection signal="area_entered" from="WallColider" to="." method="_on_wall_colider_area_entered"]
+[connection signal="timeout" from="knockback" to="." method="_on_timer_timeout"]
