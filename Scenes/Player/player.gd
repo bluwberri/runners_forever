@@ -113,16 +113,13 @@ func set_state(new_state):
 	
 	
 
-func _on_wall_colider_area_entered(area: Area2D) -> void:
-	if state in [States.RUNNING]:
-		velocity.x = -700 * curRunDir
-		knockbacktimer.start()
-		print(state)
-		set_state(States.KNOCKBACK)
-		print("ajgesb")
-		
-	if state in [States.FALLING,States.JUMPING]:
-		set_state(States.WALLSLIDING)
+
 
 func _on_timer_timeout() -> void:
 	set_state(States.RUNNING)
+
+
+func _on_wall_colider_body_entered(body: Node2D) -> void:
+	if not body == self:
+		if state in [States.FALLING,States.JUMPING]:
+			set_state(States.WALLSLIDING)

@@ -96,7 +96,7 @@ animations = [{
 size = Vector2(70, 138)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3d8c"]
-size = Vector2(45, 109)
+size = Vector2(3.25, 109)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("knockbacktimer", "wallColider", "animation")]
 script = ExtResource("1_a3d8c")
@@ -110,13 +110,13 @@ scale = Vector2(1.15325, 1.43)
 sprite_frames = SubResource("SpriteFrames_htcer")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xpcdj")
 
 [node name="WallColider" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallColider"]
-position = Vector2(22.5, 0)
+position = Vector2(37.375, 1)
 shape = SubResource("RectangleShape2D_a3d8c")
 
 [node name="knockback" type="Timer" parent="."]
@@ -126,5 +126,5 @@ one_shot = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 
-[connection signal="area_entered" from="WallColider" to="." method="_on_wall_colider_area_entered"]
+[connection signal="body_entered" from="WallColider" to="." method="_on_wall_colider_body_entered"]
 [connection signal="timeout" from="knockback" to="." method="_on_timer_timeout"]
