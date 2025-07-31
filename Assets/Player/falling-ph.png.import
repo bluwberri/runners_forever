@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3y4vnysln1em"
-path="res://.godot/imported/jumping-ph.png-daac4e37dbb95b87936681560af09c35.ctex"
+uid="uid://c18x7ptufsg5p"
+path="res://.godot/imported/falling-ph.png-e4a76dc7d6a569b3b25406898e6dcff6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Player/jumping-ph.png"
-dest_files=["res://.godot/imported/jumping-ph.png-daac4e37dbb95b87936681560af09c35.ctex"]
+source_file="res://Assets/Player/falling-ph.png"
+dest_files=["res://.godot/imported/falling-ph.png-e4a76dc7d6a569b3b25406898e6dcff6.ctex"]
 
 [params]
 

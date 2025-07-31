@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbsgnm7eurupw"
-path="res://.godot/imported/wallsliding-ph.png-0fbbb3077f135ca240dba0e310a69679.ctex"
+path="res://.godot/imported/wallsliding-ph.png-272a8c2d7b84e1bfc67bb24b75b0bfc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Player/wallsliding-ph.png"
-dest_files=["res://.godot/imported/wallsliding-ph.png-0fbbb3077f135ca240dba0e310a69679.ctex"]
+source_file="res://Assets/Player/wallsliding-ph.png"
+dest_files=["res://.godot/imported/wallsliding-ph.png-272a8c2d7b84e1bfc67bb24b75b0bfc0.ctex"]
 
 [params]
 

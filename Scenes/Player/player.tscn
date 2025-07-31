@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=3 uid="uid://x5a5nkorq7op"]
 
 [ext_resource type="Script" uid="uid://brbqljeltjqsi" path="res://Scenes/Player/player.gd" id="1_a3d8c"]
-[ext_resource type="Texture2D" uid="uid://jolech4gyvf4" path="res://Scenes/Player/standing-ph.png" id="2_a3d8c"]
-[ext_resource type="Texture2D" uid="uid://3y4vnysln1em" path="res://Scenes/Player/jumping-ph.png" id="2_dd0ac"]
-[ext_resource type="Texture2D" uid="uid://c18x7ptufsg5p" path="res://Scenes/Player/falling-ph.png" id="3_0u5uq"]
-[ext_resource type="Texture2D" uid="uid://c0e3bb2oto7ng" path="res://Scenes/Player/knockback-ph.png" id="5_0u5uq"]
-[ext_resource type="Texture2D" uid="uid://b31w70qxor5no" path="res://Scenes/Player/running-ph.png" id="5_jlvik"]
-[ext_resource type="Texture2D" uid="uid://cbsgnm7eurupw" path="res://Scenes/Player/wallsliding-ph.png" id="6_gk6dx"]
+[ext_resource type="Texture2D" uid="uid://jolech4gyvf4" path="res://Assets/Player/standing-ph.png" id="2_a3d8c"]
+[ext_resource type="Texture2D" uid="uid://3y4vnysln1em" path="res://Assets/Player/jumping-ph.png" id="2_dd0ac"]
+[ext_resource type="Texture2D" uid="uid://c18x7ptufsg5p" path="res://Assets/Player/falling-ph.png" id="3_0u5uq"]
+[ext_resource type="Texture2D" uid="uid://c0e3bb2oto7ng" path="res://Assets/Player/knockback-ph.png" id="5_0u5uq"]
+[ext_resource type="Texture2D" uid="uid://b31w70qxor5no" path="res://Assets/Player/running-ph.png" id="5_jlvik"]
+[ext_resource type="Texture2D" uid="uid://cbsgnm7eurupw" path="res://Assets/Player/wallsliding-ph.png" id="6_gk6dx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhyir"]
 atlas = ExtResource("3_0u5uq")
