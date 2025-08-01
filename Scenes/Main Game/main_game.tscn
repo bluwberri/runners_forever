@@ -1,26 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxg7m3a4xaf1t"]
+[gd_scene load_steps=3 format=3 uid="uid://dxg7m3a4xaf1t"]
 
 [ext_resource type="Script" uid="uid://bbnti4kiaqdwf" path="res://Scenes/Main Game/main_game.gd" id="1_81f2q"]
 [ext_resource type="PackedScene" uid="uid://x5a5nkorq7op" path="res://Scenes/Player/player.tscn" id="2_81f2q"]
-[ext_resource type="PackedScene" uid="uid://binkul1m5fv5" path="res://Scenes/Block/block.tscn" id="3_81f2q"]
-[ext_resource type="Texture2D" uid="uid://kgd6tt3nngwf" path="res://icon.svg" id="4_vymm8"]
-
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_vymm8"]
-scenes/2/scene = ExtResource("3_81f2q")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ca1l6"]
-texture = ExtResource("4_vymm8")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-
-[sub_resource type="TileSet" id="TileSet_ca1l6"]
-tile_size = Vector2i(128, 128)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetScenesCollectionSource_vymm8")
-sources/1 = SubResource("TileSetAtlasSource_ca1l6")
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_81f2q"]
 
 [node name="Main Game" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_81f2q")
@@ -28,14 +9,3 @@ player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("2_81f2q")]
 position = Vector2(23, 707)
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_ca1l6")
-format = 2
-layer_0/tile_data = PackedInt32Array(655357, 1, 0, 655358, 1, 0, 655359, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 655356, 1, 0, 524295, 1, 0, 524294, 1, 0, 524293, 1, 0, 524292, 1, 0, 524291, 1, 0, 524290, 1, 0, 524289, 1, 0, 524288, 1, 0, 589823, 1, 0, 589822, 1, 0)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 1280)
-shape = SubResource("WorldBoundaryShape2D_81f2q")

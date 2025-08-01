@@ -127,4 +127,5 @@ one_shot = true
 position_smoothing_enabled = true
 
 [connection signal="body_entered" from="WallColider" to="." method="_on_wall_colider_body_entered"]
+[connection signal="body_exited" from="WallColider" to="." method="_on_wall_colider_body_exited"]
 [connection signal="timeout" from="knockback" to="." method="_on_timer_timeout"]
